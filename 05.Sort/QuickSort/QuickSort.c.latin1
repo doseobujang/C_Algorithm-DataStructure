@@ -1,0 +1,29 @@
+#include<stdio.h>
+
+void Swap(int*, int*);
+int Partition(int*, int, int);
+void QuickSort(int*, int, int);
+
+int main(void){
+	int DataSet[] = {6, 4, 2, 3, 1, 5};
+	int Length = sizeof DataSet / sizeof DataSet[0];
+	int i = 0;
+	
+	QuickSort(DataSet, 0, Length-1);
+	
+	for(i = 0; i < Length; i++)
+	{
+		printf("%d ", DataSet[i]);
+	}
+	
+	printf("\n");
+	
+	return 0;
+}
+
+void QuickSort(int DataSet[], int Left, int Right){
+	if(Left < Right)
+	{
+		int Index = Partition(DataSet, Left, Right);
+		
+		// 
